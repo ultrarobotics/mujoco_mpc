@@ -72,8 +72,9 @@ For a detailed dive of the graphical user interface, see the
 [MJPC GUI](docs/GUI.md) documentation.
 
 ## Installation
-MJPC is tested with [Ubuntu 20.04](https://releases.ubuntu.com/focal/) and [macOS-12](https://www.apple.com/by/macos/monterey/). In principle, other versions and Windows operating system should work with MJPC, but these are not tested.
+MJPC is tested with [Ubuntu 23.10](https://releases.ubuntu.com/focal/) and [macOS-12](https://www.apple.com/by/macos/monterey/). In principle, other versions and Windows operating system should work with MJPC, but these are not tested.
 
+With 23.10 the clang verion is 16.0.06 (15)
 ### Prerequisites
 Operating system specific dependencies:
 
@@ -85,9 +86,9 @@ Install `ninja` and `zlib`:
 brew install ninja zlib
 ```
 
-#### Ubuntu 20.04
+#### Ubuntu 23.10
 ```sh
-sudo apt-get update && sudo apt-get install cmake libgl1-mesa-dev libxinerama-dev libxcursor-dev libxrandr-dev libxi-dev ninja-build zlib1g-dev clang-12
+sudo apt-get update && sudo apt-get install cmake libgl1-mesa-dev libxinerama-dev libxcursor-dev libxrandr-dev libxi-dev ninja-build zlib1g-dev clang
 ```
 
 ### Clone MuJoCo MPC
@@ -114,9 +115,9 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE:STRING=Release -G Ninja -DMJPC_BUILD_GRPC_SERVICE:BOOL=ON
 ```
 
-#### Ubuntu 20.04
+#### Ubuntu 23.10
 ```sh
-cmake .. -DCMAKE_BUILD_TYPE:STRING=Release -G Ninja -DCMAKE_C_COMPILER:STRING=clang-12 -DCMAKE_CXX_COMPILER:STRING=clang++-12 -DMJPC_BUILD_GRPC_SERVICE:BOOL=ON
+cmake .. -DCMAKE_BUILD_TYPE=Release -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DMJPC_BUILD_GRPC_SERVICE=ON
 ```
 **Note: gRPC is a large dependency and can take 10-20 minutes to initially download.**
 
